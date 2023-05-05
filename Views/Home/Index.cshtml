@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    // Url.Action() 
+
+   // Url.RouteUrl
+   // Url.Link
+
+    // <a> <form> <button>
+}
+
+<div class="text-center">
+<partial name="_AlertMessage" />
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<p>
+      @Url.ActionLink()
+</p>
+<p>
+      @Url.Action()
+</p>
+<p>
+      @Url.Action("Privacy",new{id = 123 , name = "Khanh"})
+</p>
+<p>
+      @Url.Action("Jupiter","Planet")
+</p>
+  
+  <p>
+      @Url.Action("Index","Product",new {area="ProductManage",id =1})
+</p>
+
+<p>
+    @Url.RouteUrl("default", new {action = "HelloView",controller = "Home"})
+</p>
+<p>
+    @Url.RouteUrl("Earth1")
+</p>
+
+@* <a asp-action=""></a>
+<a asp-area=""></a>
+<a asp-controller=""></a>
+<a asp-route-...=""></a>
+<a asp-route=""></a> *@
+
+@* @{
+    var routedata = new Dictionary<string,string>(){
+        {"name","khanh"},
+        {"id","3"},
+        {"abc","xyz"}
+        };
+}
+
+<a asp-action="" asp-controller="" asp-area="" asp-all-route-data="@routedata">Vi du</a> *@

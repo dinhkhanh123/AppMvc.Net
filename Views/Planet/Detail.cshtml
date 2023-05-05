@@ -1,0 +1,17 @@
+@model DoAnLapTrinhWebNC.Models.PlanetModel
+
+<h1>Trang hien thi thong tin @Model.Name</h1>
+
+<div class="card w-50">
+    <img class="card-img" src="~/planet/@(Model.Name).jpg" alt="">
+    <div class="card-content">
+        <h2>@Model.vnName</h2>
+        <p>@Model.Content</p>
+
+        <a class="card-link" asp-action="Index">Cac hanh tinh</a>
+    </div>
+</div>
+
+<p>
+    @Url.RouteUrl("Earth1")
+</p>

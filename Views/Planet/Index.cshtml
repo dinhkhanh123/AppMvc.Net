@@ -1,0 +1,13 @@
+@inject DoAnLapTrinhWebNC.Service.PlanetService planetService
+
+<h1>Cac hanh tinh trong he mat troi</h1>
+
+<div class="list-group">
+    @foreach (var planets in planetService)
+    {
+        <a class="list-group-item list-group-item-action" asp-controller="Planet"
+        asp-action="@planets.Name">
+            @planets.Name - @planets.vnName
+        </a>
+    }
+</div>
