@@ -1,9 +1,10 @@
 using DoAnLapTrinhWebNC.Models.Contacts;
+using DoAnLapTrinhWebNC.Models.Categories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-
+//DoAnLapTrinhWebNC.Models.AppDbContext
 namespace DoAnLapTrinhWebNC.Models
 {
     public class AppDbContext : IdentityDbContext<AppUser>
@@ -35,7 +36,13 @@ namespace DoAnLapTrinhWebNC.Models
                 }
             }
 
+            modelBuider.Entity<Category>(entity =>
+            {
+                entity.HasIndex(c => c.Slug); // Danh chi muc
+            });
+
         }
         public DbSet<Contact> Contacts { set; get; }
+        public DbSet<Category> Categories { set; get; }
     }
 }

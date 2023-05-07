@@ -1,0 +1,43 @@
+@model DoAnLapTrinhWebNC.Models.Categories.Category
+
+@{
+    ViewData["Title"] = Model.Description;
+}
+<h4>Danh mục</h4>
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class="col-sm-8">
+            @* @Html.DisplayFor(model => model.Content) *@
+            @Html.Raw(Model.Content)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.ParentCategory)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ParentCategory.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Chỉnh sửa</a> |
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
